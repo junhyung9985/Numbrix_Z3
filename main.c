@@ -52,6 +52,10 @@ int main (int argc, char **argv)
         
     while (fscanf(fpd, "%s ", buffer2) == 1) {
         // puts(buffer2);
+        if (l == col){
+            k +=1;
+            l = 1;
+        }
         if(buffer2[0] == ' '){
             continue;
                 
@@ -66,10 +70,7 @@ int main (int argc, char **argv)
             l++;
         }
             //printf("\n");
-        if (l == col){
-            k +=1;
-            l = 1;
-        }
+        printf("%s ", buffer);
         printf("K: %d, l: %d\n",k,l);
     }
         
