@@ -50,7 +50,7 @@ int main (int argc, char **argv)
     int k=1,l=1;
     int already = 0;
     
-    
+    char c = 0;
     while(1){
         c = fgetc(fpd);
         if(feof(fpd)) break;
@@ -121,9 +121,9 @@ int main (int argc, char **argv)
             }
      */
             //printf("\n");
-            k++;
+        /*    k++;
             l = 1;
-        }
+        }*/
       fclose(fpd);
     
     printf("\n \n");
