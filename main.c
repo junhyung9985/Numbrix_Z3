@@ -88,53 +88,53 @@ int main (int argc, char **argv)
     */
     for (int i = 0 ; i < row+2 ; i++)
         for (int j = 0 ; j < col+2 ; j++)
-                  fprintf(fp, "(declare-const a%d%d Int)\n", i, j) ;
+                  fprintf(fp, "(declare-const a%d_%d Int)\n", i, j) ;
     
     for (int i =0; i<row+2; i++){
         for (int j =0; j<col+2; j++){
             if (i == 0){
-                fprintf(fp, "(assert (= a%d%d 0))\n", i, j) ;
+                fprintf(fp, "(assert (= a%d_%d 0))\n", i, j) ;
                 continue;
             }
             if (j==0) {
-                fprintf(fp, "(assert (= a%d%d 0))\n", i, j) ;
+                fprintf(fp, "(assert (= a%d_%d 0))\n", i, j) ;
                 continue;
             }
             if (i == row+1){
-                fprintf(fp, "(assert (= a%d%d 0))\n", i, j) ;
+                fprintf(fp, "(assert (= a%d_%d 0))\n", i, j) ;
                 continue;
             }
             if (j==col+1) {
-                fprintf(fp, "(assert (= a%d%d 0))\n", i, j) ;
+                fprintf(fp, "(assert (= a%d_%d 0))\n", i, j) ;
                 continue;
             }
             
             if (a[i][j]!=0){
-                fprintf(fp, "(assert (= a%d%d %d))\n", i, j, a[i][j]) ;
+                fprintf(fp, "(assert (= a%d_%d %d))\n", i, j, a[i][j]) ;
             }
             else{
-            fprintf(fp,"(assert(and (<= a%d%d %d) (<= 1 a%d%d)))\n", i, j,(row*col), i, j);
+            fprintf(fp,"(assert(and (<= a%d_%d %d) (<= 1 a%d_%d)))\n", i, j,(row*col), i, j);
             }
         }
     }
     
     for (int i =1; i<row+1; i++){
         for (int j=1; j<col+1; j++){
-            fprintf(fp,"(assert (or (= a%d%d (- a%d%d 1)) (= a%d%d (- a%d%d 1)) (= a%d%d (- a%d%d 1)) (= a%d%d (- a%d%d 1)) (= a%d%d 1)))\n", i,j-1, i,j, i, j+1, i,j, i+1, j,i,j, i-1, j, i,j,i,j);
-            fprintf(fp,"(assert (or (= a%d%d (+ a%d%d 1)) (= a%d%d (+ a%d%d 1)) (= a%d%d (+ a%d%d 1)) (= a%d%d (+ a%d%d 1)) (= a%d%d %d)))\n", i,j-1, i,j, i, j+1, i,j, i+1, j,i,j, i-1, j, i,j, i,j, row*col);
+            fprintf(fp,"(assert (or (= a%d_%d (- a%d_%d 1)) (= a%d_%d (- a%d_%d 1)) (= a%d_%d (- a%d_%d 1)) (= a%d_%d (- a%d_%d 1)) (= a%d_%d 1)))\n", i,j-1, i,j, i, j+1, i,j, i+1, j,i,j, i-1, j, i,j,i,j);
+            fprintf(fp,"(assert (or (= a%d_%d (+ a%d_%d 1)) (= a%d_%d (+ a%d_%d 1)) (= a%d_%d (+ a%d_%d 1)) (= a%d_%d (+ a%d_%d 1)) (= a%d_%d %d)))\n", i,j-1, i,j, i, j+1, i,j, i+1, j,i,j, i-1, j, i,j, i,j, row*col);
         }
     }
     
     for (int i =1; i<=row; i++){
         for (int j=1; j<=col; j++){
             for (int k =i+1; k<=row; k++){
-                    fprintf(fp, "(assert (not (= a%d%d a%d%d)))\n", i, j,k,j) ;
+                    fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,j) ;
                 for (l = j+1; l<=col; l++){
-                    fprintf(fp, "(assert (not (= a%d%d a%d%d)))\n", i, j,k,l) ;
+                    fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,l) ;
                 }
             }
             for (l = j+1; l<=col; l++){
-               fprintf(fp, "(assert (not (= a%d%d a%d%d)))\n", i, j,i,l) ;
+               fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,i,l) ;
             }
         }
     }
@@ -157,11 +157,9 @@ int main (int argc, char **argv)
     }
     
     for (z = 0 ; z < (row+2)*(col+2) ; z++) {
-        fscanf(fin,"%s %c%d %s %s", b, &position, &where, b, b);
+        fscanf(fin,"%s %c %d %c %d %s %s", b, &position, &i, &position, &j, b, b);
         fscanf(fin, " %d%c", &value, &close );
         //printf("%c%d %d%c\n", position, where, value, close);
-        i = where/10;
-        j =  where%10;
 
         board[i][j] = value;
         //printf("%d %d %d %d\n", where, i, j, value);
