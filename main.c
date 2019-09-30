@@ -46,7 +46,7 @@ int main (int argc, char **argv)
     } // Debugging - 2
     
     FILE * fpd = fopen(argv[1],"r");
-    char buffer2 [100];
+    char buffer2 [10000];
     int k=1,l=1;
     int already = 0;
         
