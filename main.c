@@ -51,7 +51,7 @@ int main (int argc, char **argv)
     int already = 0;
         
     while (!feof(fpd)) {
-        fscanf(fd, "%s ", buffer2) ;
+        fscanf(fpd, "%s ", buffer2) ;
         if(buffer2[0] == ' '){
             continue;
                 
