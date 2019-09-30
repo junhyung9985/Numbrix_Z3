@@ -57,7 +57,7 @@ int main (int argc, char **argv)
             if(feof(fpd)) break;
             
             for (int i =0;i < sizeof(buffer2); i++){
-                if(buffer2[i] == ' '){
+                if((buffer2[i] == ' ') || (buffer[i] == '\n')){
                     already = 0;
                     continue;
                     
@@ -73,7 +73,6 @@ int main (int argc, char **argv)
                     already = 1;
                     l++;
                 }
-                
             }
             //printf("\n");
             k++;
