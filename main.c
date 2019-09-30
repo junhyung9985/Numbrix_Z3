@@ -104,9 +104,9 @@ int main (int argc, char **argv)
                     a[k][l]+=atoi(&c);
                     already = 1;
                 }
-            }*/
+            }
             
-        }
+        }*/
     }
 
     /*
