@@ -66,7 +66,7 @@ int main (int argc, char **argv)
                 }else{
                     //printf("%d ",atoi(&c));
                     a[k][l]*=10;
-                    a[k][l]=atoi(&c);
+                    a[k][l]+=atoi(&c);
                     already = 1;
                 }
                 
@@ -82,7 +82,7 @@ int main (int argc, char **argv)
                     //printf("\n%d ",atoi(&c));
                     a[k][l]*=10;
                     a[k][l]=atoi(&c);
-                    //already = 1;
+                    already = 1;
                 }
             }
         }
