@@ -79,14 +79,14 @@ int main (int argc, char **argv)
             l = 1;
         }
       fclose(fpd);
-    /*
+    
     printf("\n \n");
     for(int i=0;i<row+2;i++){
     for(int j=0;j<col+2;j++)
         printf("%d ",a[i][j]);
     printf("\n");
     }
-    */
+    printf("\n \n");
     for (int i = 0 ; i < row+2 ; i++)
         for (int j = 0 ; j < col+2 ; j++)
                   fprintf(fp, "(declare-const a%d_%d Int)\n", i, j) ;
