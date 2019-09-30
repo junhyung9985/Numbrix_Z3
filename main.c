@@ -49,7 +49,29 @@ int main (int argc, char **argv)
     char buffer2 [100];
     int k=1,l=1;
     int already = 0;
-        while(1){
+        
+    while (!feof(fpd)) {
+        fscanf(fd, "%s", buffer2) ;
+        if(buffer2 == ' '){
+            continue;
+                
+        }
+        if(buffer2 == '?'){
+                // printf("? "); // Debugging - 3
+            a[k][l] = 0;
+            l++;
+        }
+        if(buffer2>=48 && buffer2<= 57){
+            a[k][l] = atoi(buffer2);
+            l++;
+        }
+            //printf("\n");
+            k++;
+            l = 1;
+    }
+        
+    /*
+    while(1){
             
             fgets(buffer2, sizeof(buffer2), fpd);
             if(feof(fpd)) break;
@@ -76,7 +98,7 @@ int main (int argc, char **argv)
             //printf("\n");
             k++;
             l = 1;
-        }
+        }*/
       fclose(fpd);
     /*
     printf("\n \n");
