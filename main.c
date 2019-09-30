@@ -55,9 +55,8 @@ int main (int argc, char **argv)
         c = fgetc(fpd);
         if(feof(fpd)) break;
         if(c==' ') {l++; already = 0; continue;}
-        if(c!='\n'&&c!='\0'){
-            
-            if(l!=(col+1)){
+        if(c=='\n'){k++; l=1; continue;}
+        if(c!='\0'){
                 if(c=='?'){
                     //printf("-1 ");
                     a[k][l]=0;
@@ -68,22 +67,6 @@ int main (int argc, char **argv)
                     a[k][l]+=atoi(&c);
                     already = 1;
                 }
-                
-                
-            }
-            else if(l == (col+1)){
-                l=1;
-                k++;
-                if(c=='?'){
-                    //printf("\n-1 ");
-                        a[k][l]=0;
-                }else{
-                    //printf("\n%d ",atoi(&c));
-                    a[k][l]*=10;
-                    a[k][l]+=atoi(&c);
-                    already = 1;
-                }
-            }
             
         }
     }
