@@ -51,7 +51,7 @@ int main (int argc, char **argv)
     int already = 0;
         
     while (fscanf(fpd, "%s ", buffer2) == 1) {
-        puts(buffer2);
+        // puts(buffer2);
         if(buffer2[0] == ' '){
             continue;
                 
@@ -103,14 +103,14 @@ int main (int argc, char **argv)
             l = 1;
         }*/
       fclose(fpd);
-    /*
+    
     printf("\n \n");
     for(int i=0;i<row+2;i++){
     for(int j=0;j<col+2;j++)
         printf("%d ",a[i][j]);
     printf("\n");
     }
-    */
+    
     for (int i = 0 ; i < row+2 ; i++)
         for (int j = 0 ; j < col+2 ; j++)
                   fprintf(fp, "(declare-const a%d_%d Int)\n", i, j) ;
