@@ -25,7 +25,7 @@ int main (int argc, char **argv)
         }
           col ++;
      }
-    printf("%d %d\n", row, col); // Debugging - 1
+    //printf("%d %d\n", row, col); // Debugging - 1
     fclose(fpc);
 
   //row 와 column은 알게됨.
@@ -115,7 +115,7 @@ int main (int argc, char **argv)
             l = 1;
         }*/
       fclose(fpd);
-    
+    /*
     printf("\n \n");
     for(int i=0;i<row+2;i++){
     for(int j=0;j<col+2;j++)
@@ -123,6 +123,7 @@ int main (int argc, char **argv)
     printf("\n");
     }
     printf("\n \n");
+    */
     for (int i = 0 ; i < row+2 ; i++)
         for (int j = 0 ; j < col+2 ; j++)
                   fprintf(fp, "(declare-const a%d_%d Int)\n", i, j) ;
