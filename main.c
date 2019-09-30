@@ -49,8 +49,37 @@ int main (int argc, char **argv)
     }
     int k=1,l=1;
     int already = 0;
-        
     
+    
+    while(1){
+        c = fgetc(fpd);
+        if(feof(fpd)) break;
+        if(c!='\n'&&c!=' '&&c!='\0'){
+            l++;
+            if((l%col)!=1){
+                if(c=='?'){
+                    //printf("-1 ");
+                    a[k][l]=-1;
+                }else{
+                    //printf("%d ",atoi(&c));
+                    a[k][l]=atoi(&c);
+                }
+            }
+            else if((l%col)==1){
+                l=l%col;
+                k++;
+                if(c=='?'){
+                    //printf("\n-1 ");
+                                        a[k][l]=-1;
+                }else{
+                    //printf("\n%d ",atoi(&c));
+                    a[k][l]=atoi(&c);
+                }
+            }
+        }
+    }
+
+    /*
     while(1){
         already = 0;
             fgets(buffer2, sizeof(buffer2), fpd);
@@ -80,14 +109,15 @@ int main (int argc, char **argv)
                 if(buffer2[i]>=48 && buffer2[i]<= 57){
                     if (already == 1) {a[k][l] *=10;}
                     a[k][l]+= (buffer2[i]-48);
-                    /*if(already == 1){continue;}
+                    if(already == 1){continue;}
                     a[k][l] = atoi(&(buffer2[i]));
-                    */
+                    
                     already = 1;
                     
                 }
                 
             }
+     */
             //printf("\n");
             k++;
             l = 1;
