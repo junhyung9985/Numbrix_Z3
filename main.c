@@ -70,7 +70,7 @@ int main (int argc, char **argv)
             k +=1;
             l = 1;
         }
-        print("K: %d, l: %d\n",k,l);
+        printf("K: %d, l: %d\n",k,l);
     }
         
     /*
