@@ -60,7 +60,7 @@ int main (int argc, char **argv)
             if(feof(fpd)) break;
             
             for (int i =0;i < sizeof(buffer2); i++){
-                if((buffer2[i] == ' ') || (buffer[i] == '\n')){
+                if((buffer2[i] == ' ')){
                     if (already == 1){
                         l++;
                         already = 0;
@@ -68,6 +68,9 @@ int main (int argc, char **argv)
                     }
                     continue;
                     
+                }
+                if (buffer[i] == '\n'){
+                    break;
                 }
                 if(buffer2[i] == '?'){
                     // printf("? "); // Debugging - 3
