@@ -60,6 +60,7 @@ int main (int argc, char **argv)
             if(feof(fpd)) break;
             
             for (int i =0;i < sizeof(buffer2); i++){
+                if ( l == col) break;
                 if (buffer[i] == '\n'){
                     break;
                 }
@@ -86,7 +87,7 @@ int main (int argc, char **argv)
                     already = 1;
                     
                 }
-                if ( l == col) break;
+                
             }
             //printf("\n");
             k++;
