@@ -50,8 +50,8 @@ int main (int argc, char **argv)
     int k=1,l=1;
     int already = 0;
         
-    while (!feof(fpd)) {
-        fscanf(fpd, "%s ", buffer2) ;
+    while (fscanf(fpd, "%s ", buffer2) == 1) {
+        puts(buffer2);
         if(buffer2[0] == ' '){
             continue;
                 
