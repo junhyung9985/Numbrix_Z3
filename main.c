@@ -170,7 +170,7 @@ int main ()
             }
             printf("\n") ;
     }
-    close(fin) ;
+    pclose(fin) ;
 }
 
 
