@@ -163,7 +163,7 @@ int main ()
         j =  where%10;
 
         board[i][j] = value;
-        printf("%d %d %d %d");
+        printf("%d %d %d %d", where, i, j, value);
     }
     
     for (i = 1 ; i <= row ; i++) {
