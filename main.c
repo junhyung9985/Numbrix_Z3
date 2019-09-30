@@ -59,9 +59,10 @@ int main (int argc, char **argv)
             if((l%col)!=1){
                 if(c=='?'){
                     //printf("-1 ");
-                    a[k][l]=-1;
+                    a[k][l]=0;
                 }else{
                     //printf("%d ",atoi(&c));
+                    a[k][l]*=10;
                     a[k][l]=atoi(&c);
                 }
             }
@@ -70,9 +71,10 @@ int main (int argc, char **argv)
                 k++;
                 if(c=='?'){
                     //printf("\n-1 ");
-                                        a[k][l]=-1;
+                                        a[k][l]=0;
                 }else{
                     //printf("\n%d ",atoi(&c));
+                    a[k][l]*=10;
                     a[k][l]=atoi(&c);
                 }
             }
