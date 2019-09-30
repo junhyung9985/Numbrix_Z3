@@ -56,7 +56,7 @@ int main (int argc, char **argv)
         if(feof(fpd)) break;
         if(c!='\n'&&c!=' '&&c!='\0'){
             
-            if (c == '?'){
+            /*if (c == '?'){
                 a[k][l] = 0;
                 l++;
             }
@@ -74,8 +74,8 @@ int main (int argc, char **argv)
         }
         else if (c == ' '){
             l++;
-        }
-            /*if(l!=(col+1)){
+        }*/
+            if(l!=(col+1)){
                 if(c=='?'){
                     if(already == 1){
                         l++; already = 0;
@@ -106,7 +106,7 @@ int main (int argc, char **argv)
                 }
             }
             
-        }*/
+        }
     }
 
     /*
