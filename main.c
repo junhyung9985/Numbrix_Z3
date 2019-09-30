@@ -73,19 +73,19 @@ int main ()
                 }
                 
             }
-            printf("\n");
+            //printf("\n");
             k++;
             l = 1;
         }
       fclose(fpd);
-    
+    /*
     printf("\n \n");
     for(int i=0;i<row+2;i++){
     for(int j=0;j<col+2;j++)
         printf("%d ",a[i][j]);
     printf("\n");
     }
-    
+    */
     for (int i = 0 ; i < row+2 ; i++)
         for (int j = 0 ; j < col+2 ; j++)
                   fprintf(fp, "(declare-const a%d%d Int)\n", i, j) ;
@@ -158,10 +158,12 @@ int main ()
     
     for (z = 0 ; z < (row+2)*(col+2) ; z++) {
         fscanf(fin,"%s %c%d %s %d", b, &position, &where, b, &value);
+        
         i = where/10;
         j =  where%10;
 
         board[i][j] = value;
+        printf("%d %d %d %d");
     }
     
     for (i = 1 ; i <= row ; i++) {
