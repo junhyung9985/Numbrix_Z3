@@ -54,17 +54,14 @@ int main (int argc, char **argv)
     while(1){
         c = fgetc(fpd);
         if(feof(fpd)) break;
-        if(c!='\n'&&c!=' '&&c!='\0'){
-            
+        if(c==' ') {l++; already = 0; continue;}
+        if(c!='\n'&&c!='\0'){
             
             if(l!=(col+1)){
                 if(c=='?'){
-                    if(already == 1){
-                        l++; already = 0;
-                    }
                     //printf("-1 ");
                     a[k][l]=0;
-                    l++;
+                    //l++;
                 }else{
                     //printf("%d ",atoi(&c));
                     a[k][l]*=10;
