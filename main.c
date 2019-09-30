@@ -72,7 +72,8 @@ int main (int argc, char **argv)
                     l++;
                 }
                 if(buffer2[i]>=48 && buffer2[i]<= 57){
-                    a[k][l] = (a[k][l])*10 + (buffer2[i]-48);
+                    if (already == 1) {a[k][l] = (a[k][l])*10;}
+                    a[k][l]+= (buffer2[i]-48);
                     /*if(already == 1){continue;}
                     a[k][l] = atoi(&(buffer2[i]));
                     */
