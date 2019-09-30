@@ -77,7 +77,7 @@ int main ()
             k++;
             l = 1;
         }
-      fclose(fpc);
+      fclose(fpd);
     
     printf("\n \n");
     for(int i=0;i<row+2;i++){
