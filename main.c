@@ -86,6 +86,7 @@ int main (int argc, char **argv)
                     already = 1;
                     
                 }
+                if ( l == col) break;
             }
             //printf("\n");
             k++;
