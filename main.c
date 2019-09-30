@@ -1,10 +1,7 @@
 //
 //  main.c
 //  Numbrix
-//
-//  Created by YoungChae Kong on 30/09/2019.
-//  Copyright © 2019 Team 2. All rights reserved.
-//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
