@@ -141,7 +141,7 @@ int main ()
     fprintf(fp,"(check-sat)\n(get-model)\n");
      fclose(fp) ;
 
- FILE * fin = popen("z3 formula", "r") ; //FIXME
+ FILE * fin = popen("z3 formular", "r") ; //FIXME
     int board[row+2][col+2] ;
     int i, j, z;
 
