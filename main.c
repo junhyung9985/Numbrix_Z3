@@ -147,7 +147,7 @@ int main ()
 
     char b[128] ;
     char s[128] ;
-    char position ;
+    char position, close ;
     int where=0, value = 0;
     
     fscanf(fin, "%s %s", b, s) ;
@@ -157,13 +157,13 @@ int main ()
     }
     
     for (z = 0 ; z < (row+2)*(col+2) ; z++) {
-        fscanf(fin,"%s %c%d %s %d%c", b, &position, &where, b, &value, &position);
-        
+        fscanf(fin,"%s %c%d %s %d%c", b, &position, &where, b, &value, &close);
+        printf("%c%d %d%c", position, where, value, close);
         i = where/10;
         j =  where%10;
 
         board[i][j] = value;
-        printf("%d %d %d %d", where, i, j, value);
+        printf("%d %d %d %d\n", where, i, j, value);
     }
     
     for (i = 1 ; i <= row ; i++) {
