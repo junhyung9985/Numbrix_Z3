@@ -57,14 +57,19 @@ int main (int argc, char **argv)
         if(c!='\n'&&c!=' '&&c!='\0'){
             if(l!=(col+1)){
                 if(c=='?'){
+                    if(already == 1){
+                        l++; already = 0;
+                    }
                     //printf("-1 ");
                     a[k][l]=0;
+                    l++;
                 }else{
                     //printf("%d ",atoi(&c));
                     a[k][l]*=10;
                     a[k][l]=atoi(&c);
+                    already = 1;
                 }
-                l++;
+                
                 
             }
             else if(l == (col+1)){
@@ -72,11 +77,12 @@ int main (int argc, char **argv)
                 k++;
                 if(c=='?'){
                     //printf("\n-1 ");
-                                        a[k][l]=0;
+                        a[k][l]=0;
                 }else{
                     //printf("\n%d ",atoi(&c));
                     a[k][l]*=10;
                     a[k][l]=atoi(&c);
+                    //already = 1;
                 }
             }
         }
