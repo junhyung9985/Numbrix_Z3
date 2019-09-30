@@ -43,10 +43,10 @@ int main (int argc, char **argv)
     } // Debugging - 2
     
     FILE * fpd = fopen(argv[1],"r");
-    char buffer2 [90000];
+ /*   char buffer2 [90000];
     for (int i =0; i<90000;i ++){
         buffer2[i] = 0;
-    }
+    }*/
     int k=1,l=1;
     int already = 0;
     
@@ -55,8 +55,7 @@ int main (int argc, char **argv)
         c = fgetc(fpd);
         if(feof(fpd)) break;
         if(c!='\n'&&c!=' '&&c!='\0'){
-            l++;
-            if((l%col)!=1){
+            if((l!=(col+1)){
                 if(c=='?'){
                     //printf("-1 ");
                     a[k][l]=0;
@@ -65,9 +64,11 @@ int main (int argc, char **argv)
                     a[k][l]*=10;
                     a[k][l]=atoi(&c);
                 }
+                l++;
+                
             }
-            else if((l%col)==1){
-                l=l%col;
+            else if(l == (col+1)){
+                l=1;
                 k++;
                 if(c=='?'){
                     //printf("\n-1 ");
