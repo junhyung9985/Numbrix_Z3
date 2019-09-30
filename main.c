@@ -58,7 +58,11 @@ int main (int argc, char **argv)
             
             for (int i =0;i < sizeof(buffer2); i++){
                 if((buffer2[i] == ' ') || (buffer[i] == '\n')){
-                    already = 0;
+                    if (already == 1){
+                        l++;
+                        already = 0;
+                        
+                    }
                     continue;
                     
                 }
@@ -68,10 +72,12 @@ int main (int argc, char **argv)
                     l++;
                 }
                 if(buffer2[i]>=48 && buffer2[i]<= 57){
-                    if(already == 1){continue;}
+                    a[k][l] = (a[k][l])*10 + (buffer2[i]-48);
+                    /*if(already == 1){continue;}
                     a[k][l] = atoi(&(buffer2[i]));
+                    */
                     already = 1;
-                    l++;
+                    
                 }
             }
             //printf("\n");
