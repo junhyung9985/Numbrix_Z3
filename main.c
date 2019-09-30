@@ -28,7 +28,7 @@ int main (int argc, char **argv)
         }
           col ++;
      }
-    // printf("%d %d\n", row, col); // Debugging - 1
+    printf("%d %d\n", row, col); // Debugging - 1
     fclose(fpc);
 
   //row 와 column은 알게됨.
@@ -61,9 +61,11 @@ int main (int argc, char **argv)
             
             for (int i =0;i < sizeof(buffer2); i++){
                 if ( l == col) break;
+                
                 if (buffer[i] == '\n'){
                     break;
                 }
+                
                 if((buffer2[i] == ' ')){
                     if (already == 1){
                         l++;
@@ -79,7 +81,7 @@ int main (int argc, char **argv)
                     l++;
                 }
                 if(buffer2[i]>=48 && buffer2[i]<= 57){
-                    if (already == 1) {a[k][l] = (a[k][l])*10;}
+                    if (already == 1) {a[k][l] *=10;}
                     a[k][l]+= (buffer2[i]-48);
                     /*if(already == 1){continue;}
                     a[k][l] = atoi(&(buffer2[i]));
