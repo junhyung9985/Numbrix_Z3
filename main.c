@@ -36,7 +36,7 @@ int main (int argc, char **argv)
     
     for (int i =0; i<row+2; i++){
         for (int j=0; j<col+2; j++){
-            a[i][j] = -1;
+            a[i][j] = 0;
             //printf("%d", a[i][j]);
         }
         //printf("\n");
