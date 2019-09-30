@@ -56,25 +56,7 @@ int main (int argc, char **argv)
         if(feof(fpd)) break;
         if(c!='\n'&&c!=' '&&c!='\0'){
             
-            /*if (c == '?'){
-                a[k][l] = 0;
-                l++;
-            }
-            else{
-                a[k][l] *= 10;
-                a[k][l] += c;
-            }
-        }
-        else if (c == '\n'){
-            l = 1;
-            k++;
-        }
-        else if (c == '\0'){
-            break;
-        }
-        else if (c == ' '){
-            l++;
-        }*/
+            
             if(l!=(col+1)){
                 if(c=='?'){
                     if(already == 1){
