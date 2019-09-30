@@ -9,10 +9,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main ()
+int main (int argc, char **argv)
 {
   FILE * fp = fopen("formular", "w") ;
-  FILE * fpc = fopen("test","r");
+  FILE * fpc = fopen(argv[1],"r");
   int **a=NULL;
     char buffer[100];
 
@@ -45,7 +45,7 @@ int main ()
         //printf("\n");
     } // Debugging - 2
     
-    FILE * fpd = fopen("test","r");
+    FILE * fpd = fopen(argv[1],"r");
     char buffer2 [100];
     int k=1,l=1;
     int already = 0;
