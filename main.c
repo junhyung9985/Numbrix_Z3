@@ -62,12 +62,15 @@ int main (int argc, char **argv)
             l++;
         }
         if(buffer2[0]>=48 && buffer2[0]<= 57){
-            a[k][l] = atoi(buffer2);
+            a[k][l] = atoi(&(buffer2[0]));
             l++;
         }
             //printf("\n");
-            k++;
+        if (l == col){
+            k +=1;
             l = 1;
+        }
+        
     }
         
     /*
