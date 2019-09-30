@@ -51,17 +51,17 @@ int main (int argc, char **argv)
     int already = 0;
         
     while (!feof(fpd)) {
-        fscanf(fd, "%s", buffer2) ;
-        if(buffer2 == ' '){
+        fscanf(fd, "%s ", buffer2) ;
+        if(buffer2[0] == ' '){
             continue;
                 
         }
-        if(buffer2 == '?'){
+        if(buffer2[0] == '?'){
                 // printf("? "); // Debugging - 3
             a[k][l] = 0;
             l++;
         }
-        if(buffer2>=48 && buffer2<= 57){
+        if(buffer2[0]>=48 && buffer2[0]<= 57){
             a[k][l] = atoi(buffer2);
             l++;
         }
