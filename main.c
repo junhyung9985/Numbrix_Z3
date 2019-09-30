@@ -50,31 +50,7 @@ int main (int argc, char **argv)
     int k=1,l=1;
     int already = 0;
         
-    while (fscanf(fpd, "%s ", buffer2) == 1) {
-        // puts(buffer2);
-        if (l == col){
-            k +=1;
-            l = 1;
-        }
-        if(buffer2[0] == ' '){
-            continue;
-                
-        }
-        if(buffer2[0] == '?'){
-                // printf("? "); // Debugging - 3
-            a[k][l] = 0;
-            l++;
-        }
-        if(buffer2[0]>=48 && buffer2[0]<= 57){
-            a[k][l] = atoi(&(buffer2[0]));
-            l++;
-        }
-            //printf("\n");
-        printf("%s ", buffer);
-        printf("K: %d, l: %d\n",k,l);
-    }
-        
-    /*
+    
     while(1){
             
             fgets(buffer2, sizeof(buffer2), fpd);
@@ -92,7 +68,7 @@ int main (int argc, char **argv)
                     l++;
                 }
                 if(buffer2[i]>=48 && buffer2[i]<= 57){
-                    if(already == 1){already =0; continue;}
+                    if(already == 1){continue;}
                     a[k][l] = atoi(&(buffer2[i]));
                     already = 1;
                     l++;
@@ -102,7 +78,7 @@ int main (int argc, char **argv)
             //printf("\n");
             k++;
             l = 1;
-        }*/
+        }
       fclose(fpd);
     
     printf("\n \n");
