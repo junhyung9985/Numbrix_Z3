@@ -55,7 +55,7 @@ int main (int argc, char **argv)
         c = fgetc(fpd);
         if(feof(fpd)) break;
         if(c!='\n'&&c!=' '&&c!='\0'){
-            if((l!=(col+1)){
+            if(l!=(col+1)){
                 if(c=='?'){
                     //printf("-1 ");
                     a[k][l]=0;
