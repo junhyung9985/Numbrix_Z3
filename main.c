@@ -55,12 +55,12 @@ int main (int argc, char **argv)
         
     
     while(1){
-            
+        already = 0;
             fgets(buffer2, sizeof(buffer2), fpd);
             if(feof(fpd)) break;
             
             for (int i =0;i < sizeof(buffer2); i++){
-                if ( l == col) break;
+                if ( l == col+1) break;
                 
                 if (buffer[i] == '\n'){
                     break;
