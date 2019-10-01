@@ -168,7 +168,7 @@ int main (int argc, char **argv)
             for (int k =1; k<=row; k++){
                 //fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,j) ;
                 for (l = 1; l<=col; l++){
-                    if(k!=i && l!= j) fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,l) ;
+                    if((k!=i) && (l!= j)) fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,l) ;
             }
             /*for (int k =i+1; k<=row; k++){
                     //fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,j) ;
