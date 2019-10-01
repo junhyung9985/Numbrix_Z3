@@ -165,15 +165,20 @@ int main (int argc, char **argv)
     
     for (int i =1; i<=row; i++){
         for (int j=1; j<=col; j++){
-            for (int k =i+1; k<=row; k++){
-                    fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,j) ;
+            for (int k =1; k<=row; k++){
+                //fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,j) ;
+                for (l = 1; l<=col; l++){
+                    if(k!=i && l!= j) fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,l) ;
+            }
+            /*for (int k =i+1; k<=row; k++){
+                    //fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,j) ;
                 for (l = j+1; l<=col; l++){
                     fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,k,l) ;
-                }
+                }*/
             }
-            for (l = j+1; l<=col; l++){
+            /*for (l = j+1; l<=col; l++){
                fprintf(fp, "(assert (not (= a%d_%d a%d_%d)))\n", i, j,i,l) ;
-            }
+            }*/
         }
     }
     fprintf(fp,"(check-sat)\n(get-model)\n");
